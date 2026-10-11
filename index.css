@@ -1,0 +1,53 @@
+:root {
+  --font-sans: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+  color: #0f172a;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Tabular figures for strict numerical alignment */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle, senior-grade scrollbars */
+.custom-scroll::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dark .custom-scroll::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Clean micro-transitions */
+button, a, input, select {
+  transition: background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
