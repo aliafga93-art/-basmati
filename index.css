@@ -1,29 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;600;700;800&family=Tajawal:wght@300;400;500;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
 :root {
-  --font-sans: 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Almarai', 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
   font-family: var(--font-sans);
-  background-color: #f1f5f9;
-  color: #0f172a;
+  background-color: #fbfbfb;
+  color: #09090b;
+  line-height: 1.5;
+  letter-spacing: -0.011em;
 }
 
-.tabular-nums {
+/* Tabular figures for numbers, rates, IDs, and dates */
+.tabular-nums, .font-mono {
+  font-family: var(--font-mono) !important;
   font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  letter-spacing: -0.02em;
 }
 
-/* Crisp enterprise scrollbars */
+/* Linear / Stripe sleek scrollbar */
 .custom-scroll::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 
 .custom-scroll::-webkit-scrollbar-track {
@@ -31,19 +41,39 @@ body {
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 3px;
-}
-
-.dark .custom-scroll::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #d4d4d8;
+  border-radius: 9999px;
 }
 
 .custom-scroll::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #a1a1aa;
 }
 
-/* Printing styles for official audit sheets */
+.dark .custom-scroll::-webkit-scrollbar-thumb {
+  background: #27272a;
+}
+
+.dark .custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Subtle focus ring */
+:focus-visible {
+  outline: 2px solid #18181b;
+  outline-offset: 1px;
+}
+
+.dark :focus-visible {
+  outline: 2px solid #e4e4e7;
+}
+
+/* High-density grid styling */
+.audit-grid {
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+/* Print official report stylesheet */
 @media print {
   .no-print {
     display: none !important;
